@@ -2854,14 +2854,14 @@ function readAHTML() {
   return h;
 }
 var ENERGY = ['#ex-energy', 'Reread the energy paragraph'];
-reg('q-rotate', { ask: 'v_0 >', num: true, ans: '4', tol: 0.011,
+reg('q-rotate', { ask: '|v_0| >', num: true, ans: '4', tol: 0.011,
   wrongs: [['2', '2 is `ω_0`. Going over the top needs `F{1}{2}v_0^2 − 4` to be more than the upright energy 4.', ENERGY],
     [['2.83', '2.828', 'sqrt(8)', '√8'], 'That is `sqrt(8)`, the speed that reaches `90°`, where `E = 0`. The top needs energy 4, not 0.', ENERGY],
     ['8', '8 is `F{1}{2}v_0^2` at the threshold. Solve `F{1}{2}v_0^2 = 8` for `v_0`.', ENERGY],
     ['16', '16 is `v_0^2` at the threshold. Take its square root.', ENERGY]],
   hints: ['Set `F{1}{2}v_0^2 − 4` equal to the energy of the upright position.'], teach: ENERGY }, 'rotate');
 function rotateHTML() {
-  return card('Swing or Rotate?', '<p class="ptext">' + P('The pendulum starts at the bottom, `θ = 0`, with angular velocity `v_0`. It goes over the top exactly when `v_0` is larger than what number?') + '</p>' + typed('q-rotate'), 'card-rotate');
+  return card('Swing or Rotate?', '<p class="ptext">' + P('The pendulum starts at the bottom, `θ = 0`, with angular velocity `v_0`, which can be positive or negative. It goes over the top, in either direction, exactly when the angular speed `|v_0|` is larger than what number?') + '</p>' + typed('q-rotate'), 'card-rotate');
 }
 reg('q-height', { ask: 'θ_("max") =', num: true, ans: '97.25', also: ['97.2', '97.18'], tol: 0.255, units: 'degrees',
   wrongs: [[['82.8', '82.82'], 'That solves `cos θ_("max") = F{1}{8}`. The sign is negative: `F{1}{2} = −4 cos θ_("max")`, so `cos θ_("max") = −F{1}{8}`.', ENERGY],
